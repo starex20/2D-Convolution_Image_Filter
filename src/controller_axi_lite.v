@@ -3,7 +3,7 @@
 
 
 module controller_axi_lite #(
- parameter DATA_WIDTH = 32, ADDR_WIDTH = 2
+ parameter DATA_WIDTH = 32, ADDR_WIDTH = 4
 )(
     input  wire                          clk,
     input  wire                          rst_n,
@@ -32,16 +32,17 @@ module controller_axi_lite #(
     input wire                           tlast,
     output wire                          start,
     output wire                          run,
- output wire [26:0]                      filter_weights
+    output wire [26:0]                   filter_weights
 
 );
 
 // --------------------- parameter -----------------------
 localparam
+    REGCOUNT               = (1 << ADDR_WIDTH - 2) 
     // Register
-    CTRL                   = 2'd0,
-    STATUS                 = 2'd1,
-    FILTER                 = 2'd2,
+    CTRL                   = 4'd0,
+    STATUS                 = 4'd1,
+    FILTER                 = 4'd2,
 
     //write FSM
     WRIDLE                 = 2'd0,
@@ -77,7 +78,7 @@ localparam
     wire [ADDR_WIDTH-1:0]         rAddr;
 
     // registers
-    reg [DATA_WIDTH-1:0]          registers [0:ADDR_WIDTH*2-1];
+    reg [DATA_WIDTH-1:0]             registers [0:REGCOUNT-1];
     
     reg [1:0]                     statNextState;
 
@@ -158,7 +159,7 @@ end
 // write addr
 always @(posedge clk) begin
     if (aw_hs)
-        wAddr <= s_axi_control_awaddr;
+       wAddr <= (s_axi_control_awaddr >> 2);
 end
 
 // write data
@@ -232,6 +233,6 @@ assign s_axi_control_rdata   = rData;
 assign s_axi_control_rresp   = 2'b00;  // OKAY
 assign s_axi_control_rvalid  = (rState == RDDATA);
 assign ar_hs   = s_axi_control_arvalid & s_axi_control_arready;
-assign rAddr   = s_axi_control_araddr;
+assign rAddr   = (s_axi_control_araddr >> 2);
 
 endmodule

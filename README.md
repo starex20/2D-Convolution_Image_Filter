@@ -10,6 +10,7 @@
 ### grayscale BMP format
 ![image](https://github.com/user-attachments/assets/02668b6d-bc63-458f-8b3a-5a6582b842ce)
 
+BMP(Bitmap) 포맷은 픽셀 데이터를 압축없이 저장하는 이미지 포맷으로, 구조가 단순하여 하드웨어 수준에서 픽셀 데이터를 파싱하고 처리하기 용이하여 BMP 포맷 이미지를 입력 데이터로 사용하였다.
 
 
 <br/><br/>

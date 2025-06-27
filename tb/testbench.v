@@ -7,7 +7,7 @@
 module tb();
 
 parameter AXI_CONTROL_DATA_WIDTH = 32;
-parameter AXI_CONTROL_ADDR_WIDTH = 2;
+parameter AXI_CONTROL_ADDR_WIDTH = 4;
 parameter AXIS_DATA_WIDTH = 8;
 parameter IMAGE_WIDTH_SIZE = 512; // 512x512 image
 parameter IMAGE_WIDTH_LOG2_SIZE = 9;
@@ -15,9 +15,9 @@ parameter FIFO_DEPTH = 4;
 parameter FIFO_LOG2_DEPTH = 2;
 
 // Control Register Map
-parameter CTRL   = 2'd0;
-parameter STATUS = 2'd1;
-parameter FILTER = 2'd2;
+parameter CTRL   = 4'h00,
+          STATUS = 4'h04,
+          FILTER = 4'h08;
 
 // 3x3 filter weights (gaussian filter)
 parameter W1 = 3'd1, W2 = 3'd2, W3 = 3'd1,

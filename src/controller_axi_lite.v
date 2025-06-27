@@ -38,7 +38,8 @@ module controller_axi_lite #(
 
 // --------------------- parameter -----------------------
 localparam
-    REGCOUNT               = (1 << ADDR_WIDTH - 2) 
+    REGCOUNT               = (1 << ADDR_WIDTH - 2),
+ 
     // Register
     CTRL                   = 4'd0,
     STATUS                 = 4'd1,

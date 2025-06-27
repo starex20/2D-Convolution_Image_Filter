@@ -17,7 +17,7 @@ module conv #(
     input wire                           i_tlast,
     output wire                          o_tlast,
     input wire                           start,
-    input wire [17:0]                    filter_weights
+    input wire [26:0]                    filter_weights
 );
     
 
@@ -33,7 +33,8 @@ module conv #(
     reg                       convolved_data_valid;
     reg                       mult_EOL, add_EOL, divide_EOL;
     reg                       mult_tlast, add_tlast, divide_tlast;
-    reg [4:0]                 divisor;
+    reg [5:0]                 divisor;
+    wire [5:0]                nextDivisor;          
     reg                       divisorAddState, nextDivisorAddState;
     reg [3:0]                 divisorAddCounter;
     wire                      addCountDone;
@@ -50,7 +51,7 @@ always @(posedge clk)
 begin
     if(start) begin
         for(i=0; i<9; i=i+1)
-            kernel[i] <= filter_weights[2*i +: 2];
+            kernel[i] <= filter_weights[3*i +: 3];
     end
 end
 
@@ -91,18 +92,17 @@ begin
     end
 end
 
-assign addCountDone = (divisorAddCounter == 4'd8);
-
 always @(posedge clk)
 begin
     if(!rst_n) 
-        divisor <= 5'b0;
-    else if(divisorAddState == D_ADD) begin
-        for(i=0; i<9; i=i+1) 
-            divisor <= divisor + filter_weights[2*i +: 2];
+        divisor <= 6'b0;
+    else if(divisorAddState == D_ADD) begin 
+        divisor <= nextDivisor; //divisor + filter_weights[3*i +: 3];
     end
 end
 
+assign nextDivisor = divisorAddState == D_ADD ? divisor + filter_weights[divisorAddCounter*3 +: 3] : divisor;
+assign addCountDone = (divisorAddCounter == 4'd8);
 
     
 //-------------------- Multiplication stage ----------------------

@@ -19,10 +19,10 @@ parameter CTRL   = 2'd0;
 parameter STATUS = 2'd1;
 parameter FILTER = 2'd2;
 
-// 3x3 filter weights
-parameter W1 = 2'd1, W2 = 2'd1, W3 = 2'd1,
-          W4 = 2'd1, W5 = 2'd1, W6 = 2'd1,
-          W7 = 2'd1, W8 = 2'd1, W9 = 2'd1;
+// 3x3 filter weights (gaussian filter)
+parameter W1 = 3'd1, W2 = 3'd2, W3 = 3'd1,
+          W4 = 3'd2, W5 = 3'd4, W6 = 3'd2,
+          W7 = 3'd1, W8 = 3'd2, W9 = 3'd1;
 
 // System Signals
 reg clk = 0;

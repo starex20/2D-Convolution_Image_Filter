@@ -3,7 +3,7 @@
 
 module imageFilterTop #(
     parameter AXI_CONTROL_DATA_WIDTH = 32,
-              AXI_CONTROL_ADDR_WIDTH = 2,
+              AXI_CONTROL_ADDR_WIDTH = 4,
               AXIS_DATA_WIDTH        = 8,
               IMAGE_WIDTH_SIZE       = 512,
               IMAGE_WIDTH_LOG2_SIZE  = 9,

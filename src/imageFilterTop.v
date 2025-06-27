@@ -60,7 +60,7 @@ module imageFilterTop #(
     wire                          convolved_data_EOL;
     wire                          convolved_data_tlast;
 
-    wire [17:0]                   filter_weights;
+    wire [26:0]                   filter_weights;
     wire                          start;
     wire                          run;
 

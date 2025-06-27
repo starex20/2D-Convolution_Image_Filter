@@ -32,7 +32,7 @@ module controller_axi_lite #(
     input wire                           tlast,
     output wire                          start,
     output wire                          run,
-    output wire [17:0]                   filter_weights
+ output wire [26:0]                      filter_weights
 
 );
 
@@ -120,7 +120,7 @@ end
 
 assign run = (registers[STATUS][1:0] == RUN);
 assign start = (!run && statNextState == RUN); 
-assign filter_weights = registers[FILTER][17:0];
+ assign filter_weights = registers[FILTER][26:0];
 
 //--------------------- Write FSM --------------------
 

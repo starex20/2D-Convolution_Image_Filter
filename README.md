@@ -30,7 +30,7 @@ tlast : 한 frame의 끝을 의미.
 
 | Address       | Register Name | Access Type | Register Description    |
 |-------------|------|--------|---------|
-| 0x00  | CONTROL    | R/W   | Bit 0 : start    |
+| 0x00  | CONTROL    | R/W   | Bit 0 : start/stop    |
 | 0x04  | STATUS    | R      | Bit 1-0 : status (IDLE, RUN, DONE)  |
 | 0x08  | FILTER    |  R/W     | Bit 2-0 : Weight1 <br/> Bit 5-3 : Weight2 <br/>    ⋮ <br/> Bit 26-24 : Weight9 |
 

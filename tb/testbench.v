@@ -124,7 +124,7 @@ imageFilterTop #(
 
 
 
-// drivers
+// device drivers
 task read_register(input [AXI_CONTROL_ADDR_WIDTH-1:0] addr, output [AXI_CONTROL_DATA_WIDTH-1:0] data_out);
 begin
     // 1. Read Address

@@ -36,7 +36,7 @@ tlast : 한 frame의 끝을 의미.
 
 <br/><br/>
 
-# Result
+# Result (Gaussian Filter)
 ![image](https://github.com/user-attachments/assets/b197d097-a43c-49d2-81d0-d196fda0c263)
 
 

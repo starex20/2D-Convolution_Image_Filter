@@ -224,11 +224,7 @@ initial begin
 
     wait(img_writing);
     repeat(10) @(posedge clk);
-
-  $display( "================================================");
-  $display( "==============Finish Simulation!!===============");
-  $display( "================================================");
-  $finish;
+    $finish;
 
 end
 

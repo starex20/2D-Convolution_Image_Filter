@@ -19,6 +19,7 @@ BMP(Bitmap) 포맷은 픽셀 데이터를 압축없이 저장하는 이미지 �
 ![image](https://github.com/user-attachments/assets/9a6c7ce4-513b-411e-a72e-c1a00f4ec2d8)
 <br/>
 EOL(tuser) : End of Line, 영상의 한 라인(row)의 끝을 의미.
+<br/>
 tlast : 한 frame의 끝을 의미.
 <br/><br/>
 ![image](https://github.com/user-attachments/assets/14ddcb70-12d8-4732-85e7-49207e88a65e)

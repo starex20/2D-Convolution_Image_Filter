@@ -1,6 +1,7 @@
 # 2D-Convolution Image Filter
 
-![image](https://github.com/user-attachments/assets/21653713-639b-4ae5-8b52-274a786d544f)
+![image](https://github.com/user-attachments/assets/abe89c3c-88de-4a2b-9fec-91da76823d98)
+
 
 
 <br/><br/>

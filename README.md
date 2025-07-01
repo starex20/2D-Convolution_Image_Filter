@@ -34,7 +34,7 @@ BMP(Bitmap) 포맷은 픽셀 데이터를 압축없이 저장하는 이미지 �
 |-------------|------|--------|---------|
 | 0x00  | CONTROL    | R/W   | Bit 0 : start/stop    |
 | 0x04  | STATUS    | R      | Bit 1-0 : status (IDLE, RUN, DONE)  |
-| 0x08  | FILTER    |  R/W     | 3x3 convolution kernel weights <br/> Bit 2-0 : Weight1 <br/> Bit 5-3 : Weight2 <br/>    ⋮ <br/> Bit 26-24 : Weight9 |
+| 0x08  | FILTER    |  R/W     | **3x3 convolution kernel weights.** <br/> Bit 2-0 : Weight1 <br/> Bit 5-3 : Weight2 <br/>    ⋮ <br/> Bit 26-24 : Weight9 |
 
 <br/><br/>
 

@@ -41,6 +41,7 @@ BMP(Bitmap) 포맷은 픽셀 데이터를 압축없이 저장하는 이미지 �
 # Result (Gaussian Filter)
 ![image](https://github.com/user-attachments/assets/28f41485-5b26-4757-bdec-1550a26087bd)
 <br/>
+<br/>
 ![image](https://github.com/user-attachments/assets/b197d097-a43c-49d2-81d0-d196fda0c263)
 
 
